@@ -1,0 +1,211 @@
+body /*defualt settings for components in the body*/
+{
+  font-family: maple mono;
+  text-align: center;
+  color: #d8dee9;
+}
+
+button
+{
+  padding: 20px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #d8dee9;
+}
+
+#message 
+{
+  color: #81a1c1;
+  font-weight: italic; /* bold,italic,etc. */
+}
+
+#aboutBox
+{
+  text-align: center;
+  
+  width: 400px;
+  height: fit-content;
+  
+  font-size: 11.5;
+  background: #4c566a;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+
+  border: 5px solid;
+  border-color: #3b4252;
+  border-radius: 10px;
+
+  /*margin-left: 20px; changes box position (0 left, 200 middle, 400 right)*/
+}
+
+html, body
+{
+  margin: 0;
+  padding: 0;
+}
+
+#banner
+{
+  width: 100vw;
+  height: 100vh; /* full viewport height initially */
+  background-image: url('images/meow.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Maple Mono', monospace;
+  color: #d8dee9;
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+  transition: height 0.3s ease; /* smooth shrinking */
+}
+
+.banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease; /* optional: shrink text */
+}
+
+.banner-content h1 {
+  margin: 0;
+  font-size: 5vw; /* responsive font size */
+}
+
+.banner-content h4 {
+  margin: 10px 0 0 0;
+  font-size: 2vw;
+}
+
+#main-content {
+  padding: 50px;
+  background-color: #434c5e;
+  padding: 2rem;
+}
+
+#navSelect {
+  position: fixed;
+  z-index: 999;
+  right: var(--nav-right, 30px);
+  top: 25px; 
+
+  text-align: center;
+
+  width: 35px;
+  height: 35px;
+  padding: 2px;
+  border-radius: 50%;
+  border: 2px solid #3b4252;
+
+  background: linear-gradient(135deg, #4c566a, #434c5e);
+  background-size: 200% 200%;
+
+  transition: right 0.5s ease, border-color 0.5s ease;
+}
+
+#navSelect:hover
+{
+  border-color: #e5e9f0;
+  animation: gradientShift 3s ease infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Inner bars */
+#navSelect .vert,
+#navSelect .horiz {
+  position: absolute;
+  background-color: #d8dee9;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease; /* 👈 Smooth rotation */
+}
+
+#navSelect .vert {
+  width: 3px;
+  height: 15px;
+}
+
+#navSelect .horiz {
+  width: 15px;
+  height: 3px;
+}
+
+/* When active (turned into X) */
+#navSelect.active .vert {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#navSelect.active .horiz {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+#navBox /* ========== Popup Box ========== */
+{
+  position: fixed;
+  z-index: 1000;
+  right: 20px;
+  top: 25px;
+  width: fit-content;
+  padding: 5px;
+  height: fit-content;
+  
+  padding-right: 15px;
+  padding-left: 15px;
+
+
+  border-radius: 7px;
+
+  background-color: #3b4252;
+  color: #eceff4;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Show box when active */
+#navBox.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#navSelectPage
+{
+  color: #434c5e;
+  height: 25px;
+  width: 100px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  border: 2px solid;
+  border-radius: 10px;
+  text-align: center;
+  border-color: #3b4252;
+  background-size: 200% 200%;
+
+  transition: right 0.5s ease, border-color 0.5s ease;
+}
+
+#navSelectPage:hover
+{
+  border-color: #e5e9f0;
+  animation: gradientShift 3s ease infinite alternate;
+}
