@@ -35,7 +35,6 @@ button
   font-weight: italic; /* bold,italic,etc. */
 }
 
-
 #aboutBox {
   text-align: center;
 
@@ -248,11 +247,11 @@ html, body
   display: none;
 }
 
-.item {
+#carouselBox {
   min-width: 250px;
   height: 150px;
 
-  background: #222;
+  background: #3b4252;
   color: white;
   font-size: 2rem;
 
