@@ -35,6 +35,26 @@ button
   font-weight: italic; /* bold,italic,etc. */
 }
 
+#projectBox {
+  margin: 0 auto;
+  width: 1500px;
+  background: #3b4252;
+  padding: 1px 1px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+}
+
+.imageRow img {
+  width: 25%;
+  height: auto;
+}
+
 #aboutBox {
   text-align: center;
 
@@ -74,7 +94,7 @@ html, body
 {
   width: 100vw;
   height: 100vh; /* full viewport height initially */
-  background-image: url('images/meow.jpg');
+  background-image: url('images/codingBanner.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
